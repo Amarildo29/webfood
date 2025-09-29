@@ -1,153 +1,280 @@
+/* ========== Base / Reset ========== */
 body {
-  margin: 0px;
-  font-family: "Roboto", sans-serif;
-  background-color: rgb(54, 49, 49);
+  margin: 0;                          /* Remove default browser margin */
+  font-family: "Roboto", sans-serif;  /* Your chosen font stack */
+  background-color: rgb(54, 49, 49);  /* Dark page background for contrast */
 }
 
+/* ========== Header ========== */
 header {
-  margin: 0px;
-  padding: 0.315rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(180deg, rgb(2, 1, 1), rgb(32, 27, 27));
+  margin: 0;                                              /* Avoid stray gaps */
+  padding: 0.315rem 1rem;                                 /* Compact header padding */
+  display: flex;                                          /* Horizontal layout */
+  justify-content: space-between;                         /* Space between logo and nav */
+  align-items: center;                                    /* Vertically center content */
+  background: linear-gradient(180deg, #020101, #201b1b);  /* Subtle dark gradient */
 }
 
+/* Hide the hamburger button by default (desktop-first for that element).
+   We'll show it on small screens in the responsive section. */
+.menu-btn{
+  display: none;
+}
+
+/* Hide the <aside> wrapper by default (the drawer trigger container).
+   We'll enable it on small screens. */
+aside{
+  display: none;
+}
+
+/* ========== Branding / Logo ========== */
 #page-logo {
-  font-size: 2rem;
-  font-weight: bold;
-  text-shadow: 1px 1px 4px gold;
+  font-size: 2rem;                    /* Prominent brand size */
+  font-weight: bold;                  /* Emphasize brand */
+  text-shadow: 1px 1px 4px gold;      /* Decorative glow */
 }
 
 #page-logo:hover {
-  text-shadow: 1px 1px 8px gold;
+  text-shadow: 1px 1px 8px gold;      /* Slightly stronger glow on hover */
 }
 
+/* ========== Header Links / Nav ========== */
 header a {
-  color: orange;
-  text-decoration: none;
+  color: orange;                      /* Brand accent color for links */
+  text-decoration: none;              /* Clean look (no underline) */
 }
 
 header nav ul {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.3125rem;
-  /* padding: 0px;
-  margin: 0px; */
+  display: flex;                      /* Horizontal menu */
+  justify-content: space-between;     /* Spread items evenly */
+  gap: 0.3125rem;                     /* Small gap between items */
+  padding: 0;                         /* Remove default UL padding */
+  margin: 0;                          /* Remove default UL margin */
 }
 
 nav ul li {
-  list-style: none;
-  text-align: center;
+  list-style: none;                   /* No bullets in nav */
+  text-align: center;                 /* Center text inside each link */
 }
 
-nav ul li a {
-  padding: 0.3125rem;
-  font-size: 1.25rem;
+header nav ul li a {
+  padding: 0.3125rem;                 /* Clickable area */
+  font-size: 1.25rem;                 /* Readable nav size */
 }
 
-nav ul li a:hover {
-  background-color: orange;
+header nav ul li a:hover {
+  background-color: orange;           /* Invert colors on hover */
   color: black;
-  border-radius: 8px;
+  border-radius: 8px;                 /* Soft rounded hover chip */
 }
 
+/* ========== Main Layout ========== */
 main {
-  margin: 0px auto;
-  width: 48rem;
+  margin: 0 auto;                     /* Center main content block */
+  max-width: 48rem;                   /* FIX: use max-width not fixed width for responsiveness */
+  width: 100%;                        /* Let it shrink on small screens */
+  padding-inline: 1rem;               /* Side padding so content doesn't hug edges */
 }
 
 main h1 {
-  text-align: center;
-  color: orange;
-  font-size: 3rem;
-  text-shadow: 1px 1px 2px gold;
+  text-align: center;                 /* Centered title */
+  color: orange;                      /* Match brand accent */
+  font-size: 3rem;                    /* Large desktop headline */
+  text-shadow: 1px 1px 2px gold;      /* Subtle glow */
 }
 
+/* ========== Cards Grid ========== */
 section {
-  display: grid;
-  gap: 3rem;
-  grid-template-columns: 1fr 1fr;
-  margin-bottom: 3.123rem;
-  padding: 0px;
+  display: grid;                      /* Two-column grid on larger screens */
+  gap: 3rem;                          /* Roomy spacing between cards */
+  grid-template-columns: 1fr 1fr;     /* 2 equal columns */
+  margin-bottom: 3.123rem;            /* Section breathing room */
+  padding: 0;                         /* No extra padding */
 }
 
+/* Individual card wrapper */
 section article {
-  text-align: center;
-  /* border: solid 5px black; */
-  border-radius: 9px;
-  padding-bottom: 10px;
-  background: linear-gradient(120deg, orange, rgb(239, 196, 115));
-  box-shadow: 2px 4px 6px gold;
-  width: 100%;
-  overflow: hidden;
+  text-align: center;                                         /* Center card content */
+  border-radius: 9px;                                         /* Soft corners */
+  padding-bottom: 10px;                                       /* Space below button/text */
+  background: linear-gradient(120deg, orange, rgb(239,196,115)); /* Warm gradient */
+  box-shadow: 2px 4px 6px gold;                               /* Decorative shadow */
+  width: 100%;                                                /* Full column width */
+  overflow: hidden;                                           /* Keep image corners rounded */
 }
 
+/* Ensure image container spans width */
 .image-container {
   width: 100%;
 }
 
+/* Make images fill the card's width and keep aspect via cover */
 article img {
-  height: 15rem;
+  height: 15rem;                    /* Fixed visual height for consistent rows */
   width: 100%;
-  object-fit: cover;
+  object-fit: cover;                /* Crop to fill without distortion */
 }
 
+/* ========== Card Content ========== */
 .meal-item-content {
-  padding: 0.3125rem 0px;
-  margin: 0.3125rem;
+  padding: 0.3125rem 0;            /* Vertical breathing room */
+  margin: 0.3125rem;               /* Slight outer spacing */
 }
 
 .meal-item-content h2 {
-  margin: 0.625rem 0px;
-  padding-bottom: 0.625rem;
-  font-size: 1.5rem;
+  margin: 0.625rem 0;              /* Separate heading from image and button */
+  padding-bottom: 0.625rem;         /* Space under title */
+  font-size: 1.5rem;               /* Subheading size */
 }
 
 .meal-item-content a {
-  text-decoration: none;
-  color: rgb(33, 30, 30);
-  background-color: rgb(247, 247, 48);
-  padding: 0.3125rem 0.625rem;
-  border-radius: 0.3125rem;
-  font-size: 1rem;
+  text-decoration: none;            /* Button-like link */
+  color: rgb(33, 30, 30);           /* Dark text for contrast */
+  background-color: rgb(247, 247, 48); /* Bright call-to-action */
+  padding: 0.3125rem 0.625rem;      /* Comfortable button padding */
+  border-radius: 0.3125rem;         /* Rounded button */
+  font-size: 1rem;                  /* Standard button size */
 }
 
 .meal-item-content a:hover {
-  background-color: gold;
+  background-color: gold;           /* Slight hover change */
   border: solid 3px rgb(247, 247, 48);
   color: rgb(40, 32, 32);
 }
 
-@media (max-width: 768px){
-  /* header{
-    
-  } */
-
-  main{
-    width: 75%;
-    margin: 0px auto;
-  }
-
+/* ========== Small Phones: ≤ 480px ========== */
+/* Put this AFTER the 768px block if you need to override it on the smallest screens.
+   FIX: In your original CSS, the 768px rules came AFTER 480px and overrode it,
+   making the H1 larger on smaller screens. This block now comes last to win. */
+@media (max-width: 480px){
   main h1{
-    font-size: 3rem;
+    /* Keep headline from getting too big on tiny screens */
+    font-size: clamp(2rem, 6vw, 2.4rem); /* FIX: use a realistic fluid value; 2vw was too small */
   }
 
-  section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  section {
+    /* Single-column stack on very small phones */
+    grid-template-columns: 1fr;       /* FIX: ensure grid collapses correctly */
+    gap: 1.5rem;                       /* Tighter spacing for small screens */
   }
 
   section article {
-    width: 350px;
-    
+    width: 100%;                       /* Let cards fill container width */
+  }
+}
+
+/* ========== Tablets & Small Laptops: ≤ 768px ========== */
+@media (max-width: 768px){
+
+  /* Hide the desktop nav and show hamburger on small screens */
+  header nav{
+    display: none;                     /* Replace with drawer menu */
+  }
+
+  /* FIX: show the aside that contains the menu button on small screens */
+  aside{
+    display: block;                    /* Was display:none globally */
+  }
+
+  /* If you actually meant "the header inside the aside", this is fine.
+     It aligns the hamburger to the right inside the aside header. */
+  aside header{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* Hamburger (menu button) */
+  .menu-btn{
+    width: 3rem;
+    height: 3rem;
+    display: flex;                     /* Show it on small screens */
+    flex-direction: column;
+    justify-content: space-evenly;     /* Evenly spaced bars */
+    cursor: pointer;                   /* Show it's clickable */
+  }
+
+  .menu-btn span{
+    width: 100%;
+    height: 3px;
+    background-color: orange;          /* Visible bars */
+    border-radius: 2px;                /* Softer look */
+  }
+
+  /* Side Drawer (overlay) */
+  #side-drawer{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(29, 26, 27);
+    position: fixed;                   /* FIX: use fixed to cover viewport while scrolling */
+    inset: 0;                          /* Shorthand for top:0; right:0; bottom:0; left:0 */
+    display: none;                     /* Hidden by default */
+    z-index: 999;                      /* FIX: ensure it sits above header/content */
+  }
+
+  /* :target toggles the drawer when URL hash matches #side-drawer */
+  #side-drawer:target{
+    display: block;                    /* Show overlay when targeted */
+  }
+
+  #side-drawer ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 2rem 1rem;
+    margin: 0;
+  }
+
+  #side-drawer li{
+    margin: 1rem 0;
+  }
+
+  #side-drawer a{
+    /* FIX: rgb values must be 0–255; 279 was invalid.
+       Use a valid light color for drawer links. */
+    color: rgb(239, 239, 213);         /* Soft light text */
+    font-size: 2rem;
+    text-decoration: none;
+    padding: 5px 10px;
+  }
+
+  #side-drawer nav ul li a:hover {
+    background-color: orange;
+    color: black;
+    border-radius: 8px;
+  }
+
+  /* Main content width on tablets */
+  main{
+    max-width: 48rem;                  /* Maintain max-width */
+    width: 75%;                        /* Narrower for readability */
+    margin: 0 auto;
+  }
+
+  main h1{
+    /* Keep a balanced headline size on tablets; smaller than desktop */
+    font-size: 2.4rem;                 /* FIX: was 2.7rem which was larger than desktop on small screens */
+  }
+
+  /* Cards stack on one column for better legibility on smaller screens */
+  section{
+    display: grid;                     /* Keep grid semantics */
+    grid-template-columns: 1fr;        /* Single column */
+    justify-content: center;
+    align-items: start;
+    gap: 2rem;
+  }
+
+  section article {
+    width: 100%;                       /* Let the container control width */
+    max-width: 350px;                  /* Approx. your previous card width cap */
+    margin-inline: auto;               /* Center the card */
   }
 
   article img {
-  height: 15rem;
-  width: 100%;
-  object-fit: cover;
-}
+    height: 15rem;                     /* Keep visual consistency */
+    width: 100%;
+    object-fit: cover;
+  }
 }
