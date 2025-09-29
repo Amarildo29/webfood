@@ -1,0 +1,153 @@
+body {
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(54, 49, 49);
+}
+
+header {
+  margin: 0px;
+  padding: 0.315rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, rgb(2, 1, 1), rgb(32, 27, 27));
+}
+
+#page-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px gold;
+}
+
+#page-logo:hover {
+  text-shadow: 1px 1px 8px gold;
+}
+
+header a {
+  color: orange;
+  text-decoration: none;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.3125rem;
+  /* padding: 0px;
+  margin: 0px; */
+}
+
+nav ul li {
+  list-style: none;
+  text-align: center;
+}
+
+nav ul li a {
+  padding: 0.3125rem;
+  font-size: 1.25rem;
+}
+
+nav ul li a:hover {
+  background-color: orange;
+  color: black;
+  border-radius: 8px;
+}
+
+main {
+  margin: 0px auto;
+  width: 48rem;
+}
+
+main h1 {
+  text-align: center;
+  color: orange;
+  font-size: 3rem;
+  text-shadow: 1px 1px 2px gold;
+}
+
+section {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 3.123rem;
+  padding: 0px;
+}
+
+section article {
+  text-align: center;
+  /* border: solid 5px black; */
+  border-radius: 9px;
+  padding-bottom: 10px;
+  background: linear-gradient(120deg, orange, rgb(239, 196, 115));
+  box-shadow: 2px 4px 6px gold;
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-container {
+  width: 100%;
+}
+
+article img {
+  height: 15rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.meal-item-content {
+  padding: 0.3125rem 0px;
+  margin: 0.3125rem;
+}
+
+.meal-item-content h2 {
+  margin: 0.625rem 0px;
+  padding-bottom: 0.625rem;
+  font-size: 1.5rem;
+}
+
+.meal-item-content a {
+  text-decoration: none;
+  color: rgb(33, 30, 30);
+  background-color: rgb(247, 247, 48);
+  padding: 0.3125rem 0.625rem;
+  border-radius: 0.3125rem;
+  font-size: 1rem;
+}
+
+.meal-item-content a:hover {
+  background-color: gold;
+  border: solid 3px rgb(247, 247, 48);
+  color: rgb(40, 32, 32);
+}
+
+@media (max-width: 768px){
+  /* header{
+    
+  } */
+
+  main{
+    width: 75%;
+    margin: 0px auto;
+  }
+
+  main h1{
+    font-size: 3rem;
+  }
+
+  section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section article {
+    width: 350px;
+    
+  }
+
+  article img {
+  height: 15rem;
+  width: 100%;
+  object-fit: cover;
+}
+}
